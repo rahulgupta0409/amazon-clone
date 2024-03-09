@@ -7,6 +7,8 @@ import com.amazonbackend.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProductServiceImpl implements ProductService {
 
@@ -23,5 +25,11 @@ public class ProductServiceImpl implements ProductService {
         productDao.save(product);
         productDto.setProductId(product.getProductId());
         return productDto;
+    }
+
+    @Override
+    public List<Product> getProductsByName(String productName, Integer offset, Integer pageSize) {
+        List<Product> products= productDao.getAllProductsByNameString(productName, offset, pageSize);
+        return products;
     }
 }
