@@ -10,4 +10,6 @@ public interface ProductService {
     ProductDto addNewProduct(ProductDto productDto);
 
     List<Product> getProductsByName(String productName, Integer offset, Integer pageSize);
+
+    List<Product> getAllProducts();
 }

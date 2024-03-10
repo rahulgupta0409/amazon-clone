@@ -12,4 +12,7 @@ public interface ProductDao extends JpaRepository<Product, Integer> {
 
     @Query(nativeQuery = true, value = "select * from product p where p.product_name like %:productName% offset :offset limit :pageSize")
     List<Product> getAllProductsByNameString(String productName, Integer offset, Integer pageSize);
+
+    @Query(nativeQuery = true, value = "select * from product")
+    List<Product> getAllProducts();
 }
