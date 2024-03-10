@@ -29,7 +29,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> getProductsByName(String productName, Integer offset, Integer pageSize) {
-        List<Product> products= productDao.getAllProductsByNameString(productName, offset, pageSize);
-        return products;
+        return productDao.getAllProductsByNameString(productName, offset, pageSize);
+    }
+
+    @Override
+    public List<Product> getAllProducts() {
+        return productDao.getAllProducts();
     }
 }

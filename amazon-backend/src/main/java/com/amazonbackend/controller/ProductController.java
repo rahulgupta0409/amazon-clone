@@ -28,5 +28,11 @@ public class ProductController {
         return productService.getProductsByName(productName, offset, pageSize);
     }
 
+    @GetMapping(path = "/getAllProducts", produces = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Product> getAllProducts() {
+        return productService.getAllProducts();
+    }
+
 
 }
