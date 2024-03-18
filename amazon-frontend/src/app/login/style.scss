@@ -1,0 +1,87 @@
+.login-screen {
+    display: flex;
+    flex-direction: row;
+    height: 70%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    .first-portion {
+        width: 25%;
+    }
+
+    .last-portion {
+        width: 25%;
+    }
+
+    .main-portion {
+        width: 50%;
+        border: 2px solid #ddd;
+        border-radius: 20px;
+        margin: 5% 0;
+
+        .login-field {
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+
+            .container {
+                width: 60%;
+                height: 100%;
+                overflow: auto;
+                justify-content: center
+            }
+
+            .label-container {
+                margin: 0 10px;
+                color: black;
+            }
+
+            .email-container {
+                margin: 0 10px 10px 10px;
+                border: 0.8px 0.8px;
+            }
+
+            .password-container {
+                margin: 0 10px 10px 10px;
+                border: 0.8px 0.8px;
+            }
+
+            .submit-container {
+                background: #ffd814;
+                border-color: #a88734 #9c7e31 #846a29;
+                color: rgb(0, 0, 0);
+                margin: 10px 0;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+
+
+.create-account-container-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+
+    .create-account-container {
+        background: #ffffff;
+        color: black;
+        margin: 10px;
+        display: flex;
+        flex-direction: row;
+        height: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px 90px;
+        border-radius: 10px;
+        box-shadow: 5px 10px #ffff;
+    }
+
+    .create-account-container:hover {
+        background: #ffffff80;
+    }
+}

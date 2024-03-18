@@ -15,4 +15,7 @@ public interface ProductDao extends JpaRepository<Product, Integer> {
 
     @Query(nativeQuery = true, value = "select * from product")
     List<Product> getAllProducts();
+
+    @Query(nativeQuery = true, value = "delete from product p where p.product_name=%:productName%")
+    List<Product> removeProduct(String productName);
 }
