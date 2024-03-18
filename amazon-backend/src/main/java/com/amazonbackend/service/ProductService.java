@@ -12,4 +12,6 @@ public interface ProductService {
     List<Product> getProductsByName(String productName, Integer offset, Integer pageSize);
 
     List<Product> getAllProducts();
+
+    List<Product> removeProduct(String productName);
 }

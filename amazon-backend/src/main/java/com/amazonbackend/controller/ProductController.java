@@ -34,5 +34,10 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
+    @DeleteMapping(path = "/removeProduct", produces = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Product> removeProduct(@RequestParam String productName) {
+        return productService.removeProduct(productName);
+    }
 
 }
