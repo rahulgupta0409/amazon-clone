@@ -2,6 +2,9 @@
 import React from 'react'
 import { Button } from '@mui/material'
 import { redirect, useRouter } from 'next/navigation'
+import Cards from '../card/page'
+import Navbar from '@/components/navigator/navbar/page'
+import './lander.scss'
 
 const HomePage = () => {
   const router = useRouter();
@@ -15,7 +18,14 @@ const HomePage = () => {
   }
 }
   return (
-    <div>HomePage
+    <div>
+      <Navbar/>
+      HomePage
+      <span className="span-container">
+      <Cards/>
+      <Cards/>
+      </span>
+      
       <Button onClick={logoutHandler}>Logout</Button>
     </div>
   )

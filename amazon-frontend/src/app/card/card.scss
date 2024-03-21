@@ -1,0 +1,38 @@
+.card-main-container {
+    display: flex;
+    margin: 5% 5%;
+
+    .card-container {
+        border-radius: 0px;
+        .card-action-area-container {
+            background-color: #fffdf6;
+            .image-container {
+                background-color: white;
+                height: 100%;
+                width: 100%;
+            }
+    
+        .card-content-container {
+            background-color: #fffdf6;
+        } 
+
+    }
+
+        .card-action-container {
+            background-color: #fffdf6;
+            
+            .card-button {
+                background-color: #fffdf6 #80669d;
+                color: black;
+                padding: 10px;
+                size: 20px;
+            }
+            .card-button:hover {
+                background-color: #f7eabe;
+            }
+        
+        }
+    
+    }
+    
+}

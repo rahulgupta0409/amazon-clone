@@ -1,6 +1,6 @@
 "use client"
 import React, { FormEvent } from 'react';
-import { baseUrl } from '@/constants/url';
+import { baseUrlUserMicroservice } from '@/constants/url';
 import { useRouter } from 'next/navigation';
 import { Button, FormControl, FormControlLabel, FormLabel, Input, TextField } from '@mui/material';
 import "./style.scss";
@@ -16,7 +16,7 @@ const LoginPage = () => {
         const email = formData.get('email')
         const password = formData.get('password')
         try {
-            await fetch(`${baseUrl}/users/login`, {
+            await fetch(`${baseUrlUserMicroservice}/users/login`, {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
