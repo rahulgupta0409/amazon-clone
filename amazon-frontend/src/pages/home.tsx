@@ -13,6 +13,7 @@ const LandingPage = () => {
     <>
       <Button onClick={() => router.push("login")}>Login</Button>
       <Button onClick={() => router.push("signup")}>Sign Up</Button>
+      <Button onClick={()=> router.push("card")}> Card </Button>
     </>
   )
 }
