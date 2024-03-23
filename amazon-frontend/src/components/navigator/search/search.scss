@@ -1,0 +1,36 @@
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-left: 30%;
+  margin-right: 30%;
+
+  form {
+    background-color: #ffff;
+    width: 400px;
+    height: 35px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+
+    input {
+      all: unset;
+      font: 16px system-ui;
+      color: black;
+      height: 70%;
+      width: 100%;
+      padding: 6px 10px;
+    }
+
+    button {
+      color: black;
+      background-color: #ffbd6a;
+      height: 100%;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      padding: 5px 10px;
+    }
+  }
+}
