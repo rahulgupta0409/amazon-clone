@@ -1,14 +1,22 @@
 .nav-container {
-    width: 100%;
-    height: 40px;
-    background: #000;
-    border-bottom: #999696 solid 0.2px;
-    box-shadow: #000;
-    
-    .app-image {
-        color: beige;
-        padding: 20px 0;
-        width: 200px;
-        height: 200px;
-    }
+  width: 100%;
+  height: 10%;
+  background: #0f1111;
+  border-bottom: #999696 solid 0.2px;
+  box-shadow: #0f1111;
+  display: flex;
+
+  .app-image-container {
+    color: beige;
+    padding: 20px 0;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    justify-items: center;
+  }
+
+  .search-container {
+    display: flex;
+    justify-items: center;
+  }
 }
