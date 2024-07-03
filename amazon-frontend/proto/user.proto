@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package AuthenticationService;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = ".;proto";
+
+message UserResponse{
+    string UserId = 1;
+    string FirstName = 2;
+    string LastName = 3;
+    string Password = 4;
+    string Email = 5;
+    string Phone = 6;
+    bool IsActive = 7;
+    string Token = 8;
+    string RefreshToken = 9;
+    string UserType = 10;
+    string CreatedBy = 11;
+    google.protobuf.Timestamp CreatedDate = 12;
+    string ModifiedBy = 13;
+    google.protobuf.Timestamp ModifiedDate = 14;
+
+}
+
+message UserWithTokenRequest{
+    string UserId = 1;
+    string Token = 2;
+}
+
+
+service UserService{
+    rpc AuthenticateUser(stream UserWithTokenRequest) returns (stream UserResponse);
+}

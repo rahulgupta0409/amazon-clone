@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: amazondb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    ports:
+      - "8090:5432"
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "postgres" ]
+      interval: 5s
+      retries: 5
+    restart: always
+
+
+  prometheus:
+    image: prom/prometheus:latest
+#    network_mode: host
+    container_name: prometheus
+    restart: unless-stopped
+    volumes:
+      - ./prometheus:/etc/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+    ports:
+      - 9090:9090
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=grafana
+    volumes:
+      - ./grafana:/etc/grafana/provisioning/datasources
+
+
+#  grafana:
+#    image: grafana/grafana-oss:latest
+#    pull_policy: always
+##    network_mode: host
+#    container_name: grafana
+#    restart: unless-stopped
+#    user: root
+#    ports:
+#      - 3002:3000
+#    links:
+#      - prometheus:prometheus
+##    volumes:
+##      - ./data/grafana:/var/lib/grafana
+#    environment:
+#      - GF_SECURITY_ADMIN_PASSWORD=admin
+#      - GF_SECURITY_ADMIN_PASSWORD=grafana
+#      - GF_USER_ALLOW_SIGN_UP=false
+#      - GF_SERVER_DOMAIN=localhost
+#      - GF_LOG_MOD=console file
+#      - GF_LOG_FILTERS=alerting.slack:debug alertmanager:debug ngalert:debug

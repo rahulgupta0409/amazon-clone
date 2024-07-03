@@ -18,8 +18,9 @@ public class ProductController {
 
     @PostMapping(path = "/createProduct", produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
-    public ProductDto addNewProduct(@RequestBody ProductDto productDto) {
-        return productService.addNewProduct(productDto);
+    public String addNewProduct(@RequestBody ProductDto productDto) {
+        productService.addNewProduct(productDto);
+        return "Success";
     }
 
     @GetMapping(path = "/getProductByProductByNameString", produces = "application/json")
